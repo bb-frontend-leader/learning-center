@@ -1,0 +1,112 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Training & learning center" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --brand: #002c54;
+    --accent: #009ed2;
+    --accent-light: #eef8fb;
+    --accent-dark: #2594da;
+    --background: #f2f2f2;
+
+    --fs-sm: clamp(0.8rem, 0.27vi + 0.73rem, 0.95rem);
+    --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+    --fs-md: clamp(1.25rem, 0.43vi + 1.14rem, 1.48rem);
+    --fs-lg: clamp(1.56rem, 0.53vi + 1.43rem, 1.86rem);
+    --fs-xl: clamp(1.95rem, 0.67vi + 1.79rem, 2.32rem);
+    --fs-xxl: clamp(2.44rem, 0.83vi + 2.23rem, 2.9rem);
+    --fs-xxxl: clamp(3.05rem, 1.04vi + 2.79rem, 3.62rem);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  html {
+    color-sheme: light;
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--brand);
+    font-size: var(--fs-base);
+    font-weight: normal;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: var(--fs-xxxl);
+  }
+
+  h2 {
+    font-size: var(--fs-xxl);
+  }
+
+  h3 {
+    font-size: var(--fs-xl);
+  }
+
+  .wrapper {
+    width: min(100vw - 3rem, var(--container-max, 100ch));
+    margin-inline: auto;
+  }
+
+  .flow > * + * {
+    margin-top: var(--margin-height, 1rem);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+</style>
