@@ -8,10 +8,21 @@ import Footer from "../components/Footer.astro";
   <Header />
 
   <main>
-    <section>
-      <div>
+    <section id="home">
+      <div class="container__img">
+        <img src="assets/images/imagen-01.webp" alt="" />
+      </div>
+      <div class="container__text">
+        <h2 class="title">
+          <span>Centro de entrenamiento</span><br /> y aprendizaje de idiomas TLC
+        </h2>
+      </div>
+    </section>
+
+    <section id="principios">
+      <div class="flow container__text">
         <h2>
-          <span>Principios</span> institucionales
+          <span>Principios</span><br /> institucionales
         </h2>
 
         <p>
@@ -27,12 +38,15 @@ import Footer from "../components/Footer.astro";
           estudiantes durante todo el proceso de aprendizaje.
         </p>
       </div>
+      <div class="container__img">
+        <img src="assets/images/imagen-02.webp" alt="" />
+      </div>
     </section>
 
-    <section>
-      <div>
+    <section id="quienes_somos">
+      <div class="flow container__text">
         <h2>
-          <span>¿Quiénes</span> somos?
+          <span>¿Quiénes</span><br /> somos?
         </h2>
 
         <p>
@@ -51,10 +65,13 @@ import Footer from "../components/Footer.astro";
           colaboradores.
         </p>
       </div>
+      <div class="container__img">
+        <img src="assets/images/imagen-03.webp" alt="" />
+      </div>
     </section>
 
-    <section>
-      <div>
+    <section id="programas">
+      <div class="flow container__text">
         <h2>
           <span>Oferta de</span> programas
         </h2>
@@ -94,12 +111,16 @@ import Footer from "../components/Footer.astro";
           <li>Conocimientos académicos en francés C1</li>
         </ul>
       </div>
+      <div class="container__img">
+        <img src="assets/images/imagen-04.webp" alt="" />
+      </div>
     </section>
 
-    <section>
-      <div>
+    <section id="proyectos">
+      <div class="flow container__text">
         <h2>
-          <span>Proyectos</span> de éxito
+          <span>Proyectos</span>
+          <br /> de éxito
         </h2>
 
         <p>
@@ -121,8 +142,11 @@ import Footer from "../components/Footer.astro";
           Además de ello, contamos con una amplia experiencia en proyectos de
           formación bilingüe con diferentes instituciones de carácter público y
           privado, como alcaldía, gobernaciones, entes estatales e instituciones
-          de formación académica y profesional
+          de formación académica y profesional.
         </p>
+      </div>
+      <div class="container__img">
+        <img src="assets/images/imagen-05.webp" alt="" />
       </div>
     </section>
   </main>
@@ -132,11 +156,80 @@ import Footer from "../components/Footer.astro";
 
 <style>
   main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    font-size: 20px;
+    position: relative;
     line-height: 1.6;
+  }
+
+  section {
+    /* border: 1px solid red; */
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    background-image: var(--image, url(assets/images/background.webp));
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  #home {
+    --image: url(assets/images/background__home.webp);
+    grid-template-columns: 2fr 1fr;
+  }
+
+  #home .container__text {
+    align-self: center;
+  }
+
+  #home .container__img {
+    align-self: flex-end;
+    justify-self: flex-start;
+  }
+
+  .title {
+    font-size: var(--fs-xxxl);
+  }
+
+  .title span {
+    font-size: var(--fs-xxl);
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  h2 span {
+    color: var(--accent);
+  }
+
+  .container__text {
+    padding-inline: 1.6rem;
+    padding-block: 2rem;
+  }
+
+  .container__text p {
+    text-wrap: wrap;
+    text-align: justify;
+  }
+
+  .container__img {
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+  img {
+    display: block;
+    max-width: var(--size, 1150px);
+    width: 100%;
+  }
+
+  li {
+    list-style: none;
+    list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23009ed2"><path d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z"/></svg>');
+  }
+
+  ul li::marker {
+    font-size: 1.5rem;
+    line-height: 0.1em;
   }
 </style>
